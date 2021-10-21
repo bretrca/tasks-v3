@@ -16,17 +16,17 @@ function Comments({ comments, updateComment }) {
         const key = `${cmmnt.name}-${i}`;
 
         return (
-          <>
+          <div key = {key}>
             {Math.floor(Date.now() / 1000) -
               Math.floor(cmmnt.createdAt / 1000) <
               300 ? (
                 <Edit {...cmmnt} editComment={editComment} />
             ) : (
-              <>
+              <div key ={key}>
                 <CommentElement key={key} user={cmmnt} />
-              </>
+              </div>
             )}
-          </>
+          </div>
         );
       })}
     </div>
