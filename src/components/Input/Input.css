@@ -1,0 +1,11 @@
+Button:hover{
+   background-color:  #2da997;
+   box-shadow: 1px 2px #2da997;
+   filter: brightness(90%);
+   color:#fff;
+}
+
+input:focus-visible{
+
+outline:#fff none 0px ;
+}
