@@ -14,8 +14,6 @@ import{
 function Input({ uploadComment}) {
   const [inputComment, setInputComment] = useState("");
 
-  useEffect(() => {}, []);
-
   function setInput(e) {
     e.preventDefault();
     setInputComment(e.target.value);
@@ -29,8 +27,9 @@ function Input({ uploadComment}) {
   }
 
   return (
-    <ContainerInput onSubmit={handleComment}>
+    <ContainerInput role="ContainerInput" onSubmit={handleComment}>
       <FontAwesomeIcon
+      data-testid ="Fa-icon"
         icon={faShare}
         style={{
           transform: "scale(-2,2)",
@@ -39,6 +38,7 @@ function Input({ uploadComment}) {
         }}
       />
       <InputElement
+      data-testid= "input-element"
         value={inputComment}
         onChange={setInput}
         placeholder="Start typing your message here..."
@@ -51,7 +51,7 @@ function Input({ uploadComment}) {
           padding: "8px",
         }}
       />
-      <Button onClick={handleComment}>send</Button>
+      <Button role="button-submit" onClick={handleComment}>send</Button>
     </ContainerInput>
   );
 }

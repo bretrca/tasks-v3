@@ -20,10 +20,13 @@ function Comments({ comments, updateComment }) {
             {Math.floor(Date.now() / 1000) -
               Math.floor(cmmnt.createdAt / 1000) <
               300 ? (
-                <Edit {...cmmnt} editComment={editComment} />
+                <Edit {...cmmnt}  editComment={editComment} />
             ) : (
+              
               <div key ={key}>
+              
                 <CommentElement key={key} user={cmmnt} />
+
               </div>
             )}
           </div>
